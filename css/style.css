@@ -1,28 +1,73 @@
-
 body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     font-size: .8em;
     scroll-behavior: smooth;
-  
 }
 
-nav{
-    background-color: #fafafa;
+nav {
     display: flex;
-    margin-bottom: 3rem;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    margin-bottom: 2rem; /* Add margin bottom */
 }
 
-.mainContainer{
+.brands {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+.brands h4 {
+    margin: 0;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.links a {
+    margin: 0 1rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+.close {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.mainContainer {
     display: flex;
     margin-inline: 2rem;
 }
 
-
-/* styles for inner div */
 .Container {
     max-width: 100px;
     width: 100%;
@@ -33,7 +78,7 @@ nav{
     text-align: center;
 }
 
-.leftdiv{
+.leftdiv {
     width: 20%;
     border-right: 2px solid #ccc;
 }
@@ -44,31 +89,6 @@ nav{
     height: 100px;
     border: 2px solid #81b1f0;
 }
-
-
-
-.links{
-    display: flex;
-    margin-left: 14rem;
-    
-}
-
-.links a {
-    display: block;
-    margin: 10px 0;
-    text-decoration: none;
-    color: #92a6bb;
-    padding-right: 2rem;
-}
-
-.links a:hover {
-    text-decoration: overline;
-    color: #0d65d8;
-    transition: all 1s;
-}
-
-
-
 
 .goals ul {
     list-style-type: none;
@@ -82,12 +102,47 @@ nav{
     border-radius: 5px;
 }
 
+/* Mobile responsiveness */
 @media (max-width: 600px) {
+    .links {
+        display: none;
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
     .Container {
         padding: 10px;
     }
+
     .profile img {
         width: 80px;
         height: 80px;
     }
+
+    .mainContainer {
+        flex-direction: column;
+        margin-inline: 2rem;
+    }
+
+    .links.menu-active {
+        display: flex;
+    }
+
+    .leftdiv {
+        width: 100%;
+    }
+
+    .close.menu-active {
+        display: block;
+    }
+
+   
+}
+
+.menu-active .hamburger {
+    display: none;
 }
