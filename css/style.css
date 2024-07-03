@@ -79,6 +79,7 @@ nav {
 }
 
 .leftdiv {
+    margin-right: 2rem;
     width: 20%;
     border-right: 2px solid #ccc;
 }
